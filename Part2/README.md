@@ -32,3 +32,11 @@ Image Normalization is done on both train and test data with its mean = 0.1307 a
 -  GAP - In the last layer, instead of Fully Connected layer, Global Average Pooling is used. This approach generates one feature map for each corresponding category of the classification task in the last Convolution layer.
 -  Loss Function - nn.NLLLoss() is used as the loss function. It does not take probabilities but rather takes a tensor of log probabilities as input. Hence, in the last layer F.log_softmax() is used instead of just softmax function.
 - Batch Size is taken as 256 with learning rate of 0.01 for first 15 epochs and then learning rate is reduced to 0.001 from 16th epochs. Higher batch size leads to faster convergence of the model as weights are updated after each propagation. However, depending on the input image, too large a batch size might not fit into the machine's memory.
+- The model achieved an accuracy of more than 99.42% with 17.6K parameters
+ ![accuracy](https://github.com/sunpau/ERA_V1_S6/blob/main/images/accuracy_log.png)
+
+# Code
+The code contains the following files:
+- S6.ipynb - which has all the main codes, to load, transform data, call the model and check the plots.
+- utils.py has all the plot functions.
+- model.py has the model archutecture, train and test functions. 
