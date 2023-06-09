@@ -10,3 +10,6 @@ Bakpropagation in a neural network demo:
 ![LR1](https://github.com/sunpau/ERA_V1_S6/blob/main/images/LR1.png)
 ![LR2](https://github.com/sunpau/ERA_V1_S6/blob/main/images/LR2.png)
 ![LR3](https://github.com/sunpau/ERA_V1_S6/blob/main/images/LR3.png)
+
+# Excel File
+In the Excel file, the Plots tab contains the loss plot. The effect of learning rate can be observed by changing the cell N36 in tab Data
