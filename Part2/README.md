@@ -20,8 +20,11 @@ Image Normalization is done while mean = 0.1307 and standard deviation = 0.3081
 # Summary of the model
 ![Summary](https://github.com/sunpau/ERA_V1_S6/blob/main/images/Summary.png)
 # Brief description
--  The input image size is 28x28x1. The model contains              
-  _**Input Layer (28x28x1)-> 4 Hidden Layers (Each with 3x3 kernals. Number of Channels 8->16->16->32)-> Transition Layer (MAX Pool + 1x1 Convolution) -> 4 Hidden Layer (Each with 3x3 kernals. Number of Channels 8->16->16->32) -> Global Average Pooling -> Softmax -> Output Layer**_
+-  The input image size is 28x28x1. The number of layer and the number of channels are designed to reach RF of image size with the limitations of 20k parameters. The model contains              
+    -  Input Layer (28x28x1) -->  Conv1(26x26x8)+ReLU - Conv2(24x24x16)+ReLU - Conv3(22x22x16)+ReLU - Conv4(20x20x32)+ReLU
+    -  Transition Layer (MAX Pool(10x10x32) + 1x1 Convolution(10x10x8)) 
+    -  Conv1(8x8x8)+ReLU - Conv2(6x6x16)+ReLU - Conv3(4x4x16)+ReLU - Conv4(2x2x32)+ReLU
+    -   Global Average Pooling -> Softmax -> Output Layer
   ![architecture](https://github.com/sunpau/ERA_V1_S6/blob/main/images/Architecture.png)
 -  Recepetive Field equal to the size of the image is preferred. However, MNIST dataset contains digits 0-9 and the border pixels does not contain any relevant information. So the last layer of the model has a receptive field of 26x26 which serves our purpose.  
 -  All the kernals are 3x3, as using multiple 3x3 filters instead of using lesser larger kernals(5x5, 7x7 etc) will help achieve larger Receptive field with less computation. 
