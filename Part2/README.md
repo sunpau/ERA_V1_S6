@@ -15,7 +15,7 @@ The training set contains 60000 examples, and the test set 10000 examples.
 
 In dataset loader, when train is set to True, train-images-idx3-ubyte is loaded. When train is set to False, t10k-images-idx3-ubyte is loaded.
 
-Image Normalization is done while mean = 0.1307 and standard deviation = 0.3081
+Image Normalization is done with mean = 0.1307 and standard deviation = 0.3081
 
 # Summary of the model
 ![Summary](https://github.com/sunpau/ERA_V1_S6/blob/main/images/Summary.png)
